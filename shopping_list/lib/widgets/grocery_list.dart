@@ -10,16 +10,16 @@ class GroceryList extends StatefulWidget {
 }
 
 class _GroceryListState extends State<GroceryList> {
+  void _addItem() {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (ctx) => const NewItem(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    void _addItem() {
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (ctx) => const NewItem(),
-        ),
-      );
-    }
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Your Groceries'),
