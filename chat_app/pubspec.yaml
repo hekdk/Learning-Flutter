@@ -38,6 +38,7 @@ dependencies:
   firebase_auth: ^5.5.2
   image_picker: ^1.1.2
   supabase_flutter: ^2.8.4
+  flutter_dotenv: ^5.2.1
 
 dev_dependencies:
   flutter_test:

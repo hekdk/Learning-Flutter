@@ -4,7 +4,9 @@ import 'package:chat_app/screens/splash.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'firebase_options.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 //roBS2AJUhoVfHanG
 void main() async {
@@ -12,6 +14,12 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  await Supabase.initialize(
+    url: dotenv.env['SUPABASE_URL']!, // your project URL
+    anonKey: dotenv.env['SUPABASE_ANON_KEY']!, // your anon key
+  );
+
   runApp(const MyApp());
 }
 
